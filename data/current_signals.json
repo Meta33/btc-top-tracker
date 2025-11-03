@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-11-03T23:42:12.900402",
+  "timestamp": "2025-11-03T23:45:57.327649",
   "composite_score": 10.0,
   "alert_level": "\ud83d\udfe2 SAFE",
   "alert_color": "brightgreen",
@@ -8,7 +8,7 @@
       "name": "BTC < $100K",
       "weight": 0.3,
       "triggered": false,
-      "current_value": "$106,667",
+      "current_value": "$106,611",
       "target": "< $100,000"
     },
     {
