@@ -25,7 +25,7 @@ def calculate_score():
             "name": "LTH Distribution Elevated",
             "weight": 0.25,
             "triggered": data.get("lth_elevated", False),
-            "current_value": f"{data.get('lth_distribution', 0):,.0f} BTC/day",
+           "current_value": f"{data.get('lth_distribution')} BTC/day" if data.get('lth_distribution') else "N/A",
             "target": "< -50,000 BTC/day"
         },
         {
