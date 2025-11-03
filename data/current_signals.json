@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-11-03T18:17:06.980698",
+  "timestamp": "2025-11-03T23:42:12.900402",
   "composite_score": 10.0,
   "alert_level": "\ud83d\udfe2 SAFE",
   "alert_color": "brightgreen",
@@ -8,7 +8,7 @@
       "name": "BTC < $100K",
       "weight": 0.3,
       "triggered": false,
-      "current_value": "$107,164",
+      "current_value": "$106,667",
       "target": "< $100,000"
     },
     {
@@ -22,7 +22,7 @@
       "name": "SPX Rollover",
       "weight": 0.15,
       "triggered": false,
-      "current_value": "6,860",
+      "current_value": "6,852",
       "target": "< 6,500"
     },
     {
@@ -43,14 +43,14 @@
       "name": "BTC Dominance > 55%",
       "weight": 0.05,
       "triggered": true,
-      "current_value": "58.5%",
+      "current_value": "58.8%",
       "target": "> 55% on Mar 31"
     },
     {
       "name": "TOTAL2 < $2T",
       "weight": 0.05,
       "triggered": true,
-      "current_value": "$1.52T",
+      "current_value": "$1.49T",
       "target": "< $2T on Mar 31"
     }
   ],
