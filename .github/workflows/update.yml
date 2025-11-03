@@ -26,9 +26,7 @@ jobs:
         
     - name: Install dependencies
       run: |
-            - name: Install dependencies
-      run: |
-        pip install --quiet --no-input requests pyyaml yfinance pandas numpy
+        pip install --quiet --no-input requests pyyaml
         
     - name: Fetch latest data
       run: python scripts/fetch_data.py
@@ -46,4 +44,3 @@ jobs:
         git add README.md data.json
         git diff --quiet && git diff --staged --quiet || git commit -m "🔄 Auto-update: $(date -u +'%Y-%m-%d %H:%M UTC')"
         git push
-
