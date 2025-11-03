@@ -1,0 +1,59 @@
+{
+  "timestamp": "2025-11-03T09:58:17.942024",
+  "composite_score": 10.0,
+  "alert_level": "\ud83d\udfe2 SAFE",
+  "alert_color": "brightgreen",
+  "signals": [
+    {
+      "name": "BTC < $100K",
+      "weight": 0.3,
+      "triggered": false,
+      "current_value": "$107,141",
+      "target": "< $100,000"
+    },
+    {
+      "name": "LTH Distribution Elevated",
+      "weight": 0.25,
+      "triggered": null,
+      "current_value": "N/A",
+      "target": "< -50,000 BTC/day"
+    },
+    {
+      "name": "SPX Rollover",
+      "weight": 0.15,
+      "triggered": false,
+      "current_value": "6,840",
+      "target": "< 6,500"
+    },
+    {
+      "name": "BTC Death Cross",
+      "weight": 0.1,
+      "triggered": false,
+      "current_value": "MA50: $0, MA200: $0",
+      "target": "MA50 < MA200"
+    },
+    {
+      "name": "M2 Growth Negative",
+      "weight": 0.1,
+      "triggered": false,
+      "current_value": "0.0% YoY",
+      "target": "< 0% YoY"
+    },
+    {
+      "name": "BTC Dominance > 55%",
+      "weight": 0.05,
+      "triggered": true,
+      "current_value": "58.2%",
+      "target": "> 55% on Mar 31"
+    },
+    {
+      "name": "TOTAL2 < $2T",
+      "weight": 0.05,
+      "triggered": true,
+      "current_value": "$1.53T",
+      "target": "< $2T on Mar 31"
+    }
+  ],
+  "triggered_count": 2,
+  "total_count": 7
+}
