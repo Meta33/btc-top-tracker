@@ -26,7 +26,9 @@ jobs:
         
     - name: Install dependencies
       run: |
-        pip install --quiet --no-input requests pyyaml
+            - name: Install dependencies
+      run: |
+        pip install --quiet --no-input requests pyyaml yfinance pandas numpy
         
     - name: Fetch latest data
       run: python scripts/fetch_data.py
