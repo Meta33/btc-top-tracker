@@ -20,7 +20,6 @@
 
 | Signal | Weight | Current Value | Target | Status | Last Check |
 |--------|--------|---------------|--------|--------|------------|
-| BTC Price vs $100K | 30% | Loading... | < $100K by Q1 2026 | ⏳ | Auto |
 | BTC < $100K | 30% | $107,164 | < $100,000 | ❌ | Auto |
 | LTH Distribution Elevated | 25% | N/A | < -50,000 BTC/day | ❌ | Auto |
 | SPX Rollover | 15% | 6,860 | < 6,500 | ❌ | Auto |
