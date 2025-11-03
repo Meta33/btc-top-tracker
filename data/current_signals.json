@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-11-03T09:58:17.942024",
+  "timestamp": "2025-11-03T12:23:51.562699",
   "composite_score": 10.0,
   "alert_level": "\ud83d\udfe2 SAFE",
   "alert_color": "brightgreen",
@@ -8,7 +8,7 @@
       "name": "BTC < $100K",
       "weight": 0.3,
       "triggered": false,
-      "current_value": "$107,141",
+      "current_value": "$108,100",
       "target": "< $100,000"
     },
     {
@@ -43,14 +43,14 @@
       "name": "BTC Dominance > 55%",
       "weight": 0.05,
       "triggered": true,
-      "current_value": "58.2%",
+      "current_value": "58.3%",
       "target": "> 55% on Mar 31"
     },
     {
       "name": "TOTAL2 < $2T",
       "weight": 0.05,
       "triggered": true,
-      "current_value": "$1.53T",
+      "current_value": "$1.54T",
       "target": "< $2T on Mar 31"
     }
   ],
