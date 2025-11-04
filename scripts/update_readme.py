@@ -32,41 +32,40 @@ def update_readme():
     except:
         formatted_time = timestamp
     
-    # Update composite score line
-    score_pattern = r'Composite Score:.*'
+    # Update composite score line (match the markdown heading format)
+    score_pattern = r'(###\s*\*\*)?Composite Score:.*'
     score_replacement = f'Composite Score: {composite_score:.0f} {alert_color}'
     readme = re.sub(score_pattern, score_replacement, readme)
     
     # Update alert level line
-    alert_pattern = r'Alert Level:.*'
-    alert_replacement = f'Alert Level: {alert_color} {alert_level}'
+    alert_pattern = r'\*\*Alert Level:\*\*.*'
+    alert_replacement = f'**Alert Level:** {alert_color} {alert_level}'
     readme = re.sub(alert_pattern, alert_replacement, readme)
     
     # Update timestamp line
-    timestamp_pattern = r'Last Updated:.*'
-    timestamp_replacement = f'Last Updated: {formatted_time} (Auto-updates every 6 hours)'
+    timestamp_pattern = r'\*\*Last Updated:\*\*.*'
+    timestamp_replacement = f'**Last Updated:** {formatted_time} (Auto-updates every 6 hours)'
     readme = re.sub(timestamp_pattern, timestamp_replacement, readme)
     
-    # Update alert message in the callout box
-    message_pattern = r'(> \*\*Alert:\*\* ).*'
-    message_replacement = f'\\1{alert_message}'
-    readme = re.sub(message_pattern, message_replacement, readme)
+    # Update signal table - match the actual section name
+    table_start = readme.find('## Signal Dashboard')
+    if table_start == -1:
+        table_start = readme.find('## 🎯 Signal Dashboard')
     
-    # Update signal table
-    # Find the table section between "## Current Signals" and the next "##" or end
-    table_start = readme.find('## Current Signals')
     if table_start != -1:
-        # Find where table ends (next ## section or end of file)
-        table_end = readme.find('\n##', table_start + 1)
+        # Find where table ends (next ## section)
+        table_end = readme.find('\n## ', table_start + 10)
+        if table_end == -1:
+            table_end = readme.find('\n---', table_start + 10)
         if table_end == -1:
             table_end = len(readme)
         
         # Build new table
         table_lines = [
-            '## Current Signals',
+            '## 🎯 Signal Dashboard',
             '',
-            '| Status | Signal | Weight | Current Value |',
-            '|--------|--------|--------|---------------|'
+            '| Signal | Weight | Current Value | Target | Status | Last Check |',
+            '|--------|--------|---------------|--------|--------|------------|'
         ]
         
         # Add signal rows
@@ -74,11 +73,11 @@ def update_readme():
             # Determine status emoji
             triggered = signal.get('triggered')
             if triggered is None:
-                status = '⚪'  # Data unavailable
+                status = '⚪'
             elif triggered:
-                status = '🔴'  # Triggered
+                status = '❌'  # Match your current format
             else:
-                status = '🟢'  # Safe
+                status = '✅'  # Match your current format
             
             # Format weight
             weight_pct = f"{signal['weight']*100:.0f}%"
@@ -88,30 +87,14 @@ def update_readme():
             if current_val is None:
                 current_val = 'N/A'
             
-            # Add row
-            row = f"| {status} | {signal['name']} | {weight_pct} | {current_val} |"
-            table_lines.append(row)
-        
-        # Add target column info
-        table_lines.extend([
-            '',
-            '<details>',
-            '<summary>📊 Signal Targets (Click to expand)</summary>',
-            '',
-            '| Signal | Target Condition |',
-            '|--------|------------------|'
-        ])
-        
-        for signal in data['signals']:
+            # Get target
             target = signal.get('target', 'N/A')
-            row = f"| {signal['name']} | {target} |"
+            
+            # Add row (match the 6-column format you have)
+            row = f"| {signal['name']} | {weight_pct} | {current_val} | {target} | {status} | Auto |"
             table_lines.append(row)
         
-        table_lines.extend([
-            '',
-            '</details>',
-            ''
-        ])
+        table_lines.append('')
         
         # Replace table section
         new_table = '\n'.join(table_lines)
