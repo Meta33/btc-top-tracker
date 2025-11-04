@@ -20,7 +20,6 @@
 
 | Signal | Weight | Current Value | Target | Status | Last Check |
 |--------|--------|---------------|--------|--------|------------|
-| BTC Price vs ATH | 30% | $106,957 | > $126K (Oct 6 ATH) | ❌ | Auto |
 | BTC Price vs ATH | 30% | $107,115 | > $126K (Oct 6 ATH) | ❌ | Auto |
 | BTC Dominance Low | 5% | 58.6% | < 45% (Alt euphoria) | ❌ | Auto |
 | 🔥 Volume Spike Alert | 25% | $0.34B/day | > 50% above baseline (Distribution) | ❌ | Auto |
