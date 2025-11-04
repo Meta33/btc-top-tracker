@@ -8,11 +8,11 @@
 
 ## 📊 Current Status
 
-### **Composite Score: ![Score](https://img.shields.io/badge/Score-10%25-brightgreen)**
+### **Composite Score: ![Score](https://img.shields.io/badge/Score-0%25-🟢)**
 
-**Alert Level:** 🟢 SAFE
+**Alert Level:** SAFE
 
-**Last Updated:** 2025-11-04 00:55 UTC (Auto-updates every 6 hours)
+**Last Updated:** 2025-11-04 01:49 UTC (Auto-updates every 6 hours)
 
 ---
 
@@ -21,13 +21,14 @@
 | Signal | Weight | Current Value | Target | Status | Last Check |
 |--------|--------|---------------|--------|--------|------------|
 | BTC < $100K | 30% | $106,667 | < $100,000 | ❌ | Auto |
-| BTC < $100K | 30% | $106,531 | < $100,000 | ❌ | Auto |
-| LTH Distribution Elevated | 25% | N/A | < -50,000 BTC/day | ❌ | Auto |
-| SPX Rollover | 15% | 6,852 | < 6,500 | ❌ | Auto |
-| BTC Death Cross | 10% | MA50: $0, MA200: $0 | MA50 < MA200 | ❌ | Auto |
-| M2 Growth Negative | 10% | 0.0% YoY | < 0% YoY | ❌ | Auto |
-| BTC Dominance > 55% | 5% | 58.6% | > 55% on Mar 31 | ✅ | Auto |
-| TOTAL2 < $2T | 5% | $1.50T | < $2T on Mar 31 | ✅ | Auto |
+| BTC Price vs ATH | 20% | $107,044 | > $126K (Oct 6 ATH) | ❌ | Auto |
+| BTC Dominance Low | 5% | 58.6% | < 45% (Alt euphoria) | ❌ | Auto |
+| 🔥 Volume Spike Alert | 25% | $0.34B/day | > 50% above baseline (Distribution) | ❌ | Auto |
+| 📉 Market Cap Declining | 15% | +0.3% | < -5% (Smart money exiting) | ❌ | Auto |
+| ⛏️ Hash Rate Falling | 10% | -1.5% | < -10% (Miner capitulation) | ❌ | Auto |
+| SPX Rollover | 15% | $6,852 | < 200-day MA (Risk-off) | ❌ | Auto |
+| USDT Dominance Low | 5% | 5.0% | < 3% (Liquidity exhaustion) | ❌ | Auto |
+| TOTAL2 Peak | 5% | $1.51T | > $2T (Altcoin mania) | ❌ | Auto |
 
 ---
 
@@ -254,7 +255,7 @@ Always do your own research and consult with a financial advisor before making i
 
 ---
 
-**Last Auto-Update:** 2025-11-04 00:55:24 UTC
+**Last Auto-Update:** 2025-11-04 01:49:50 UTC
 
 **Next Update:** In ~6 hours
 

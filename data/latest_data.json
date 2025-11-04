@@ -1,13 +1,31 @@
 {
-  "btc_price": 106531,
-  "btc_dominance": 58.60817548348547,
-  "usdt_dominance": 5.057089375765659,
-  "total2": 1502160661703.4631,
-  "timestamp": "2025-11-04T00:55:23.968929",
+  "timestamp": "2025-11-04T01:49:41.325699",
+  "btc_price": 107044,
+  "btc_dominance": 58.647526819725385,
+  "usdt_dominance": 5.037661375316947,
+  "total2": 1505646100007.3203,
+  "trade_volume": {
+    "current": 342446993.1091143,
+    "baseline": 581129650.5320479,
+    "spike": false
+  },
+  "transaction_count": {
+    "current": 453995.85714285716,
+    "baseline": 473950.0,
+    "elevated": false
+  },
+  "market_cap_trend": {
+    "current": 2224328240062.5,
+    "month_ago": 2216738477625.0,
+    "change_pct": 0.342384206080621,
+    "declining": false
+  },
+  "hash_rate_trend": {
+    "current": 1100991530.929305,
+    "change_pct": -1.454557691466625,
+    "declining": false
+  },
+  "volume_spike_alert": false,
   "spx_price": 6851.97021484375,
-  "spx_rollover": false,
-  "m2_growth": null,
-  "m2_slowing": null,
-  "lth_distribution": null,
-  "lth_elevated": null
+  "spx_rollover": false
 }

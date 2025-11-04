@@ -1,59 +1,84 @@
 {
-  "timestamp": "2025-11-04T00:55:24.315926",
-  "composite_score": 10.0,
-  "alert_level": "\ud83d\udfe2 SAFE",
-  "alert_color": "brightgreen",
+  "composite_score": 0.0,
+  "smart_money_score": 0.0,
+  "alert_level": "SAFE",
+  "alert_color": "\ud83d\udfe2",
+  "alert_message": "Accumulation/Hold - No major alerts (FREE Edition)",
   "signals": [
     {
-      "name": "BTC < $100K",
-      "weight": 0.3,
+      "name": "BTC Price vs ATH",
+      "weight": 0.2,
+      "trigger": false,
+      "current_value": "$107,044",
+      "target": "> $126K (Oct 6 ATH)",
       "triggered": false,
-      "current_value": "$106,531",
-      "target": "< $100,000"
+      "category": "Market"
     },
     {
-      "name": "LTH Distribution Elevated",
+      "name": "BTC Dominance Low",
+      "weight": 0.05,
+      "trigger": false,
+      "current_value": "58.6%",
+      "target": "< 45% (Alt euphoria)",
+      "triggered": false,
+      "category": "Market"
+    },
+    {
+      "name": "\ud83d\udd25 Volume Spike Alert",
       "weight": 0.25,
-      "triggered": null,
-      "current_value": "N/A",
-      "target": "< -50,000 BTC/day"
+      "trigger": false,
+      "current_value": "$0.34B/day",
+      "target": "> 50% above baseline (Distribution)",
+      "triggered": false,
+      "category": "Smart Money"
+    },
+    {
+      "name": "\ud83d\udcc9 Market Cap Declining",
+      "weight": 0.15,
+      "trigger": false,
+      "current_value": "+0.3%",
+      "target": "< -5% (Smart money exiting)",
+      "triggered": false,
+      "category": "Smart Money"
+    },
+    {
+      "name": "\u26cf\ufe0f Hash Rate Falling",
+      "weight": 0.1,
+      "trigger": false,
+      "current_value": "-1.5%",
+      "target": "< -10% (Miner capitulation)",
+      "triggered": false,
+      "category": "Smart Money"
     },
     {
       "name": "SPX Rollover",
       "weight": 0.15,
+      "trigger": false,
+      "current_value": "$6,852",
+      "target": "< 200-day MA (Risk-off)",
       "triggered": false,
-      "current_value": "6,852",
-      "target": "< 6,500"
+      "category": "Macro"
     },
     {
-      "name": "BTC Death Cross",
-      "weight": 0.1,
-      "triggered": false,
-      "current_value": "MA50: $0, MA200: $0",
-      "target": "MA50 < MA200"
-    },
-    {
-      "name": "M2 Growth Negative",
-      "weight": 0.1,
-      "triggered": false,
-      "current_value": "0.0% YoY",
-      "target": "< 0% YoY"
-    },
-    {
-      "name": "BTC Dominance > 55%",
+      "name": "USDT Dominance Low",
       "weight": 0.05,
-      "triggered": true,
-      "current_value": "58.6%",
-      "target": "> 55% on Mar 31"
+      "trigger": false,
+      "current_value": "5.0%",
+      "target": "< 3% (Liquidity exhaustion)",
+      "triggered": false,
+      "category": "Macro"
     },
     {
-      "name": "TOTAL2 < $2T",
+      "name": "TOTAL2 Peak",
       "weight": 0.05,
-      "triggered": true,
-      "current_value": "$1.50T",
-      "target": "< $2T on Mar 31"
+      "trigger": false,
+      "current_value": "$1.51T",
+      "target": "> $2T (Altcoin mania)",
+      "triggered": false,
+      "category": "Macro"
     }
   ],
-  "triggered_count": 2,
-  "total_count": 7
+  "timestamp": "2025-11-04T01:49:50.253299",
+  "data_completeness": "100%",
+  "tracker_version": "FREE EDITION"
 }
