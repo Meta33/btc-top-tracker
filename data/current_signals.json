@@ -1,7 +1,7 @@
 {
-  Composite Score: 15 🟢
+  "composite_score": 0.0,
   "smart_money_score": 0.0,
-  Alert Level: 🟢 SAFE
+  "alert_level": "SAFE",
   "alert_color": "\ud83d\udfe2",
   "alert_message": "Accumulation/Hold - No major alerts (FREE Edition)",
   "signals": [
@@ -9,7 +9,7 @@
       "name": "BTC Price vs ATH",
       "weight": 0.3,
       "trigger": false,
-      "current_value": "$106,926",
+      "current_value": "$106,692",
       "target": "> $126K (Oct 6 ATH)",
       "triggered": false,
       "category": "Market"
@@ -78,7 +78,7 @@
       "category": "Macro"
     }
   ],
-  "timestamp": "2025-11-04T02:33:26.123227",
+  "timestamp": "2025-11-04T02:44:34.382112",
   "data_completeness": "110%",
   "tracker_version": "FREE EDITION"
 }
