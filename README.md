@@ -8,11 +8,11 @@
 
 ## 📊 Current Status
 
-### **Composite Score: ![Score](https://img.shields.io/badge/Score-0%25-🟢)**
+### **Composite Score:** 15 🟢
 
-**Alert Level:** SAFE
+**Alert Level:** 🟢 SAFE
 
-**Last Updated:** 2025-11-04 02:48 UTC (Auto-updates every 6 hours)
+**Last Updated:** 2025-11-04 03:30 UTC (Auto-updates every 6 hours)
 
 ---
 
