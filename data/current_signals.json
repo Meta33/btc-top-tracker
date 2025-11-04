@@ -9,7 +9,7 @@
       "name": "BTC Price vs ATH",
       "weight": 0.3,
       "trigger": false,
-      "current_value": "$106,957",
+      "current_value": "$107,115",
       "target": "> $126K (Oct 6 ATH)",
       "triggered": false,
       "category": "Market"
@@ -72,13 +72,13 @@
       "name": "TOTAL2 Peak",
       "weight": 0.05,
       "trigger": false,
-      "current_value": "$1.50T",
+      "current_value": "$1.51T",
       "target": "> $2T (Altcoin mania)",
       "triggered": false,
       "category": "Macro"
     }
   ],
-  "timestamp": "2025-11-04T02:19:16.221697",
+  "timestamp": "2025-11-04T02:24:54.404258",
   "data_completeness": "110%",
   "tracker_version": "FREE EDITION"
 }
