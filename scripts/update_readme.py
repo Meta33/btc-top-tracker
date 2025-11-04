@@ -1,156 +1,129 @@
-#!/usr/bin/env python3
+!/usr/bin/env python3
 """
-Calculate composite score - FREE SMART MONEY EDITION
+Update README.md with latest signal data - FREE SMART MONEY EDITION
 """
 
 import json
+import re
 from datetime import datetime
 
-def calculate_score():
-    """Calculate weighted composite score with FREE smart money signals"""
+def update_readme():
+    """Update README.md with latest calculated signals"""
     
-    # Load latest data
-    with open('data/latest_data.json', 'r') as f:
+    # Load current signals
+    with open('data/current_signals.json', 'r') as f:
         data = json.load(f)
     
-    # ✅ CALCULATE THESE FIRST (before using in signals)
-    ath_price = 126280  # October 6, 2025 ATH
-    current_price = data.get('btc_price', 0)
-    price_ratio = current_price / ath_price if ath_price > 0 else 0
+    # Read current README
+    with open('README.md', 'r') as f:
+        readme = f.read()
     
-    # Define signals with weights
-    signals = [
-        # TIER 1: Price & Market (25%)
-        {
-            "name": "BTC Price vs ATH",
-            "weight": 0.20,
-            "trigger": price_ratio >= 0.80,  # ✅ Now this works!
-            "current_value": f"${current_price:,.0f}",
-            "target": "> $126K (Oct 6 ATH)",
-            "triggered": price_ratio >= 0.80,
-            "category": "Market"
-        },
-        {
-            "name": "BTC Dominance Low",
-            "weight": 0.05,
-            "trigger": data.get("btc_dominance", 100) < 45,
-            "current_value": f"{data.get('btc_dominance', 0):.1f}%",
-            "target": "< 45% (Alt euphoria)",
-            "triggered": data.get("btc_dominance", 100) < 45,
-            "category": "Market"
-        },
+    # Extract values
+    composite_score = data['composite_score']
+    alert_level = data['alert_level']
+    alert_color = data['alert_color']
+    alert_message = data['alert_message']
+    timestamp = data.get('timestamp', datetime.utcnow().isoformat())
+    
+    # Format timestamp (convert from ISO to readable)
+    try:
+        dt = datetime.fromisoformat(timestamp.replace('Z', '+00:00'))
+        formatted_time = dt.strftime('%Y-%m-%d %H:%M UTC')
+    except:
+        formatted_time = timestamp
+    
+    # Update composite score line
+    score_pattern = r'Composite Score:.*'
+    score_replacement = f'Composite Score: {composite_score:.0f} {alert_color}'
+    readme = re.sub(score_pattern, score_replacement, readme)
+    
+    # Update alert level line
+    alert_pattern = r'Alert Level:.*'
+    alert_replacement = f'Alert Level: {alert_color} {alert_level}'
+    readme = re.sub(alert_pattern, alert_replacement, readme)
+    
+    # Update timestamp line
+    timestamp_pattern = r'Last Updated:.*'
+    timestamp_replacement = f'Last Updated: {formatted_time} (Auto-updates every 6 hours)'
+    readme = re.sub(timestamp_pattern, timestamp_replacement, readme)
+    
+    # Update alert message in the callout box
+    message_pattern = r'(> \*\*Alert:\*\* ).*'
+    message_replacement = f'\\1{alert_message}'
+    readme = re.sub(message_pattern, message_replacement, readme)
+    
+    # Update signal table
+    # Find the table section between "## Current Signals" and the next "##" or end
+    table_start = readme.find('## Current Signals')
+    if table_start != -1:
+        # Find where table ends (next ## section or end of file)
+        table_end = readme.find('\n##', table_start + 1)
+        if table_end == -1:
+            table_end = len(readme)
         
-        # TIER 2: FREE SMART MONEY SIGNALS (50%)
-        {
-            "name": "🔥 Volume Spike Alert",
-            "weight": 0.25,
-            "trigger": data.get("volume_spike_alert", False),
-            "current_value": f"${data.get('trade_volume', {}).get('current', 0)/1e9:.2f}B/day" if data.get('trade_volume') else "N/A",
-            "target": "> 50% above baseline (Distribution)",
-            "triggered": data.get("volume_spike_alert") if data.get("volume_spike_alert") is not None else None,
-            "category": "Smart Money"
-        },
-        {
-            "name": "📉 Market Cap Declining",
-            "weight": 0.15,
-            "trigger": data.get("market_cap_trend", {}).get("declining", False),
-            "current_value": f"{data.get('market_cap_trend', {}).get('change_pct', 0):+.1f}%" if data.get('market_cap_trend') else "N/A",
-            "target": "< -5% (Smart money exiting)",
-            "triggered": data.get("market_cap_trend", {}).get("declining") if data.get('market_cap_trend', {}).get("declining") is not None else None,
-            "category": "Smart Money"
-        },
-        {
-            "name": "⚒️ Hash Rate Falling",
-            "weight": 0.10,
-            "trigger": data.get("hash_rate_trend", {}).get("falling", False),
-            "current_value": f"{data.get('hash_rate_trend', {}).get('change_pct', 0):+.1f}%" if data.get('hash_rate_trend') else "N/A",
-            "target": "< -10% (Miner capitulation)",
-            "triggered": data.get("hash_rate_trend", {}).get("falling") if data.get('hash_rate_trend', {}).get("falling") is not None else None,
-            "category": "Smart Money"
-        },
+        # Build new table
+        table_lines = [
+            '## Current Signals',
+            '',
+            '| Status | Signal | Weight | Current Value |',
+            '|--------|--------|--------|---------------|'
+        ]
         
-        # TIER 3: Macro Context (25%)
-        {
-            "name": "SPX Rollover",
-            "weight": 0.15,
-            "trigger": data.get("spx_below_ma", False),
-            "current_value": f"${data.get('spx_price', 0):,.0f}",
-            "target": "< 200-day MA (Risk-off)",
-            "triggered": data.get("spx_below_ma") if data.get("spx_below_ma") is not None else None,
-            "category": "Macro"
-        },
-        {
-            "name": "USDT Dominance Low",
-            "weight": 0.05,
-            "trigger": data.get("usdt_dominance", 100) < 3,
-            "current_value": f"{data.get('usdt_dominance', 0):.1f}%",
-            "target": "< 3% (Liquidity exhaustion)",
-            "triggered": data.get("usdt_dominance", 100) < 3,
-            "category": "Macro"
-        },
-        {
-            "name": "TOTAL2 Peak",
-            "weight": 0.05,
-            "trigger": data.get("total2", 0) > 2e12,
-            "current_value": f"${data.get('total2', 0)/1e12:.2f}T" if data.get('total2') else "N/A",
-            "target": "> $2T (Altcoin mania)",
-            "triggered": data.get("total2", 0) > 2e12,
-            "category": "Macro"
-        }
-    ]
-    
-    # Calculate composite score
-    composite_score = 0
-    smart_money_score = 0
-    triggered_signals = []
-    
-    for signal in signals:
-        if signal.get("triggered"):
-            weight = signal["weight"] * 100
-            composite_score += weight
-            triggered_signals.append(signal["name"])
+        # Add signal rows
+        for signal in data['signals']:
+            # Determine status emoji
+            triggered = signal.get('triggered')
+            if triggered is None:
+                status = '⚪'  # Data unavailable
+            elif triggered:
+                status = '🔴'  # Triggered
+            else:
+                status = '🟢'  # Safe
             
-            # Track smart money contribution
-            if signal["category"] == "Smart Money":
-                smart_money_score += weight
+            # Format weight
+            weight_pct = f"{signal['weight']*100:.0f}%"
+            
+            # Format current value (handle None values)
+            current_val = signal.get('current_value', 'N/A')
+            if current_val is None:
+                current_val = 'N/A'
+            
+            # Add row
+            row = f"| {status} | {signal['name']} | {weight_pct} | {current_val} |"
+            table_lines.append(row)
+        
+        # Add target column info
+        table_lines.extend([
+            '',
+            '<details>',
+            '<summary>📊 Signal Targets (Click to expand)</summary>',
+            '',
+            '| Signal | Target Condition |',
+            '|--------|------------------|'
+        ])
+        
+        for signal in data['signals']:
+            target = signal.get('target', 'N/A')
+            row = f"| {signal['name']} | {target} |"
+            table_lines.append(row)
+        
+        table_lines.extend([
+            '',
+            '</details>',
+            ''
+        ])
+        
+        # Replace table section
+        new_table = '\n'.join(table_lines)
+        readme = readme[:table_start] + new_table + readme[table_end:]
     
-    # Determine alert level
-    if composite_score >= 70:
-        alert_level = "EXTREME RISK"
-        alert_color = "🔴"
-        alert_message = "MAJOR DISTRIBUTION DETECTED - Consider Taking Profits (FREE Edition)"
-    elif composite_score >= 40:
-        alert_level = "ELEVATED"
-        alert_color = "🟡"
-        alert_message = "Smart Money Activity Elevated - Monitor Closely (FREE Edition)"
-    else:
-        alert_level = "SAFE"
-        alert_color = "🟢"
-        alert_message = "Accumulation/Hold - No major alerts (FREE Edition)"
+    # Write updated README
+    with open('README.md', 'w') as f:
+        f.write(readme)
     
-    # Prepare output
-    output = {
-        "composite_score": round(composite_score, 1),
-        "smart_money_score": round(smart_money_score, 1),
-        "alert_level": alert_level,
-        "alert_color": alert_color,
-        "alert_message": alert_message,
-        "signals": signals,
-        "timestamp": datetime.utcnow().isoformat(),
-        "data_completeness": "110%",
-        "tracker_version": "FREE EDITION"
-    }
-    
-    # Save to file
-    with open('data/current_signals.json', 'w') as f:
-        json.dump(output, f, indent=2)
-    
-    print(f"✅ Score calculated: {composite_score:.0f}/100 ({alert_color} {alert_level})")
-    print(f"   Smart Money contribution: {smart_money_score:.0f} points")
-    if triggered_signals:
-        print(f"   Triggered signals: {', '.join(triggered_signals)}")
-    else:
-        print(f"   No signals triggered - Market in accumulation phase")
+    print(f"✅ README.md updated successfully")
+    print(f"   Score: {composite_score:.0f}/100 ({alert_color} {alert_level})")
+    print(f"   Message: {alert_message}")
 
 if __name__ == "__main__":
-    calculate_score()
+    update_readme()
