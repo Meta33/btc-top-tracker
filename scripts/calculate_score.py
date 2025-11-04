@@ -18,7 +18,7 @@ def calculate_score():
         # TIER 1: Price & Market (25%)
         {
             "name": "BTC Price vs ATH",
-            "weight": 0.20,
+            "weight": 0.30,
             "trigger": data.get("btc_price", 0) > 126280,
             "current_value": f"${data.get('btc_price', 0):,.0f}",
             "target": "> $126K (Oct 6 ATH)",
