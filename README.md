@@ -12,7 +12,7 @@
 
 **Alert Level:** SAFE
 
-**Last Updated:** 2025-11-04 02:24 UTC (Auto-updates every 6 hours)
+**Last Updated:** 2025-11-04 02:31 UTC (Auto-updates every 6 hours)
 
 ---
 
@@ -21,6 +21,7 @@
 | Signal | Weight | Current Value | Target | Status | Last Check |
 |--------|--------|---------------|--------|--------|------------|
 | BTC Price vs ATH | 30% | $107,115 | > $126K (Oct 6 ATH) | ❌ | Auto |
+| BTC Price vs ATH | 30% | $106,917 | > $126K (Oct 6 ATH) | ❌ | Auto |
 | BTC Dominance Low | 5% | 58.6% | < 45% (Alt euphoria) | ❌ | Auto |
 | 🔥 Volume Spike Alert | 25% | $0.34B/day | > 50% above baseline (Distribution) | ❌ | Auto |
 | 📉 Market Cap Declining | 15% | +0.3% | < -5% (Smart money exiting) | ❌ | Auto |
@@ -254,7 +255,7 @@ Always do your own research and consult with a financial advisor before making i
 
 ---
 
-**Last Auto-Update:** 2025-11-04 02:24:54 UTC
+**Last Auto-Update:** 2025-11-04 02:31:40 UTC
 
 **Next Update:** In ~6 hours
 
