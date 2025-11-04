@@ -34,7 +34,7 @@ def update_readme():
     
     # Update composite score line (match the markdown heading format)
     score_pattern = r'(###\s*\*\*)?Composite Score:.*'
-    score_replacement = f'Composite Score: {composite_score:.0f} {alert_color}'
+    score_replacement = f'### **Composite Score:** {composite_score:.0f} {alert_color}'
     readme = re.sub(score_pattern, score_replacement, readme)
     
     # Update alert level line
