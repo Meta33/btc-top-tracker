@@ -3,11 +3,16 @@
 Update README.md with latest data
 """
 import json
-from datetime import datetime
-import re
 
-def update_readme():
-    """Update README with latest signals"""
+with open('data/current_signals.json', 'r', encoding='utf-8') as f:
+    signals = json.load(f)
+
+score = signals['composite_score']
+emoji = signals['alert_color']  # Already contains 🟢
+
+# Write to README
+readme_content = f"Composite Score: {score} {emoji}\n"
+readme_content += f"Alert Level: {emoji} {signals['alert_level']}\n"
     
     # Load current signals
     with open('data/current_signals.json', 'r') as f:
