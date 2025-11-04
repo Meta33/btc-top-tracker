@@ -9,7 +9,7 @@
       "name": "BTC Price vs ATH",
       "weight": 0.3,
       "trigger": false,
-      "current_value": "$106,917",
+      "current_value": "$106,926",
       "target": "> $126K (Oct 6 ATH)",
       "triggered": false,
       "category": "Market"
@@ -78,7 +78,7 @@
       "category": "Macro"
     }
   ],
-  "timestamp": "2025-11-04T02:31:40.904392",
+  "timestamp": "2025-11-04T02:33:26.123227",
   "data_completeness": "110%",
   "tracker_version": "FREE EDITION"
 }
