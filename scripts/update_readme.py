@@ -1,4 +1,4 @@
-!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 Update README.md with latest signal data - FREE SMART MONEY EDITION
 """
