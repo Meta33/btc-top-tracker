@@ -12,7 +12,7 @@
 
 **Alert Level:** 🟢 SAFE
 
-**Last Updated:** 2025-11-03 23:45 UTC (Auto-updates every 6 hours)
+**Last Updated:** 2025-11-04 00:55 UTC (Auto-updates every 6 hours)
 
 ---
 
@@ -21,13 +21,13 @@
 | Signal | Weight | Current Value | Target | Status | Last Check |
 |--------|--------|---------------|--------|--------|------------|
 | BTC < $100K | 30% | $106,667 | < $100,000 | ❌ | Auto |
-| BTC < $100K | 30% | $106,611 | < $100,000 | ❌ | Auto |
+| BTC < $100K | 30% | $106,531 | < $100,000 | ❌ | Auto |
 | LTH Distribution Elevated | 25% | N/A | < -50,000 BTC/day | ❌ | Auto |
 | SPX Rollover | 15% | 6,852 | < 6,500 | ❌ | Auto |
 | BTC Death Cross | 10% | MA50: $0, MA200: $0 | MA50 < MA200 | ❌ | Auto |
 | M2 Growth Negative | 10% | 0.0% YoY | < 0% YoY | ❌ | Auto |
-| BTC Dominance > 55% | 5% | 58.8% | > 55% on Mar 31 | ✅ | Auto |
-| TOTAL2 < $2T | 5% | $1.49T | < $2T on Mar 31 | ✅ | Auto |
+| BTC Dominance > 55% | 5% | 58.6% | > 55% on Mar 31 | ✅ | Auto |
+| TOTAL2 < $2T | 5% | $1.50T | < $2T on Mar 31 | ✅ | Auto |
 
 ---
 
@@ -254,7 +254,7 @@ Always do your own research and consult with a financial advisor before making i
 
 ---
 
-**Last Auto-Update:** 2025-11-03 23:45:57 UTC
+**Last Auto-Update:** 2025-11-04 00:55:24 UTC
 
 **Next Update:** In ~6 hours
 
