@@ -1,9 +1,9 @@
 {
-  "timestamp": "2025-11-04T02:48:33.023916",
-  "btc_price": 106585,
-  "btc_dominance": 58.63428696214701,
-  "usdt_dominance": 5.043321962262753,
-  "total2": 1510865791497.2268,
+  "timestamp": "2025-11-05T04:16:20.144821",
+  "btc_price": 101930,
+  "btc_dominance": 58.45503388890404,
+  "usdt_dominance": 5.271420291453117,
+  "total2": 1446888834726.7305,
   "trade_volume": {
     "current": 342446993.1091143,
     "baseline": 581129650.5320479,
@@ -26,6 +26,6 @@
     "declining": false
   },
   "volume_spike_alert": false,
-  "spx_price": 6851.97021484375,
+  "spx_price": 6771.5498046875,
   "spx_rollover": false
 }

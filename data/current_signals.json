@@ -1,5 +1,5 @@
 {
-  "composite_score": 0.0,
+  "composite_score": 20.0,
   "smart_money_score": 0.0,
   "alert_level": "SAFE",
   "alert_color": "\ud83d\udfe2",
@@ -7,18 +7,18 @@
   "signals": [
     {
       "name": "BTC Price vs ATH",
-      "weight": 0.3,
-      "trigger": false,
-      "current_value": "$106,585",
+      "weight": 0.2,
+      "trigger": true,
+      "current_value": "$101,930",
       "target": "> $126K (Oct 6 ATH)",
-      "triggered": false,
+      "triggered": true,
       "category": "Market"
     },
     {
       "name": "BTC Dominance Low",
       "weight": 0.05,
       "trigger": false,
-      "current_value": "58.6%",
+      "current_value": "58.5%",
       "target": "< 45% (Alt euphoria)",
       "triggered": false,
       "category": "Market"
@@ -54,7 +54,7 @@
       "name": "SPX Rollover",
       "weight": 0.15,
       "trigger": false,
-      "current_value": "$6,852",
+      "current_value": "$6,772",
       "target": "< 200-day MA (Risk-off)",
       "triggered": false,
       "category": "Macro"
@@ -63,7 +63,7 @@
       "name": "USDT Dominance Low",
       "weight": 0.05,
       "trigger": false,
-      "current_value": "5.0%",
+      "current_value": "5.3%",
       "target": "< 3% (Liquidity exhaustion)",
       "triggered": false,
       "category": "Macro"
@@ -72,13 +72,13 @@
       "name": "TOTAL2 Peak",
       "weight": 0.05,
       "trigger": false,
-      "current_value": "$1.51T",
+      "current_value": "$1.45T",
       "target": "> $2T (Altcoin mania)",
       "triggered": false,
       "category": "Macro"
     }
   ],
-  "timestamp": "2025-11-04T02:48:42.003404",
-  "data_completeness": "110%",
+  "timestamp": "2025-11-05T04:16:27.126820",
+  "data_completeness": "100%",
   "tracker_version": "FREE EDITION"
 }

@@ -8,11 +8,11 @@
 
 ## 📊 Current Status
 
-### **Composite Score:** 15 🟢
+### **Composite Score:** 20 🟢
 
 **Alert Level:** 🟢 SAFE
 
-**Last Updated:** 2025-11-04 03:30 UTC (Auto-updates every 6 hours)
+**Last Updated:** 2025-11-05 04:16 UTC (Auto-updates every 6 hours)
 
 ---
 
@@ -20,16 +20,14 @@
 
 | Signal | Weight | Current Value | Target | Status | Last Check |
 |--------|--------|---------------|--------|--------|------------|
-| BTC Price vs ATH | 20% | $107,115 | > $126K (Oct 6 ATH) | ❌ | Auto |
-| BTC Dominance Low | 5% | 58.6% | < 45% (Alt euphoria) | ❌ | Auto |
-| 🔥 Volume Spike Alert | 25% | $0.34B/day | > 50% above baseline (Distribution) | ❌ | Auto |
-| 📉 Market Cap Declining | 15% | +0.3% | < -5% (Smart money exiting) | ❌ | Auto |
-| ⛏️ Hash Rate Falling | 10% | -1.5% | < -10% (Miner capitulation) | ❌ | Auto |
-| SPX Rollover | 15% | $6,852 | < 200-day MA (Risk-off) | ❌ | Auto |
-| USDT Dominance Low | 5% | 5.0% | < 3% (Liquidity exhaustion) | ❌ | Auto |
-| TOTAL2 Peak | 5% | $1.51T | > $2T (Altcoin mania) | ❌ | Auto |
-
----
+| BTC Price vs ATH | 20% | $101,930 | > $126K (Oct 6 ATH) | ❌ | Auto |
+| BTC Dominance Low | 5% | 58.5% | < 45% (Alt euphoria) | ✅ | Auto |
+| 🔥 Volume Spike Alert | 25% | $0.34B/day | > 50% above baseline (Distribution) | ✅ | Auto |
+| 📉 Market Cap Declining | 15% | +0.3% | < -5% (Smart money exiting) | ✅ | Auto |
+| ⛏️ Hash Rate Falling | 10% | -1.5% | < -10% (Miner capitulation) | ✅ | Auto |
+| SPX Rollover | 15% | $6,772 | < 200-day MA (Risk-off) | ✅ | Auto |
+| USDT Dominance Low | 5% | 5.3% | < 3% (Liquidity exhaustion) | ✅ | Auto |
+| TOTAL2 Peak | 5% | $1.45T | > $2T (Altcoin mania) | ✅ | Auto |
 
 ## 📈 Historical Score Chart
 
