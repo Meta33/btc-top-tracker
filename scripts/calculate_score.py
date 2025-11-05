@@ -14,9 +14,9 @@ def calculate_score():
         data = json.load(f)
     
     # ✅ CALCULATE THESE FIRST (before using in signals)
-    ath_price = 126280
-current_price = data.get('btc_price', 0)
-price_ratio = current_price / ath_price if ath_price > 0 else 0
+       ath_price = 126280
+    current_price = data.get('btc_price', 0)
+    price_ratio = current_price / ath_price if ath_price > 0 else 0
     
     # Define signals with weights
     signals = [
