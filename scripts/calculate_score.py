@@ -9,7 +9,7 @@ from datetime import datetime
 def calculate_score():
     """Calculate weighted composite score with FREE smart money signals"""
     
-        # Load latest data
+    # Load latest data
     with open('data/latest_data.json', 'r') as f:
         data = json.load(f)
     
@@ -17,9 +17,6 @@ def calculate_score():
     ath_price = 126280  # October 6, 2025 ATH
     current_price = data.get('btc_price', 0)
     price_ratio = current_price / ath_price if ath_price > 0 else 0
-    
-    # Define signals with weights
-    signals = [
     
     # Define signals with weights
     signals = [
